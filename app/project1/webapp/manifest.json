@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:alp",
       "version": "1.14.2",
-      "toolsId": "5ea82a69-9f7d-4d6d-8fe1-9d8f4a5a4392"
+      "toolsId": "0f4f601b-80a9-4b06-a991-02dea97d6c95"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/catalog/",
+        "uri": "/odata/v4/user/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -86,28 +86,28 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "BooksAnalyticsList",
-          "target": "BooksAnalyticsList"
+          "name": "BooksList",
+          "target": "BooksList"
         },
         {
-          "pattern": "BooksAnalytics({key}):?query:",
-          "name": "BooksAnalyticsObjectPage",
-          "target": "BooksAnalyticsObjectPage"
+          "pattern": "Books({key}):?query:",
+          "name": "BooksObjectPage",
+          "target": "BooksObjectPage"
         }
       ],
       "targets": {
-        "BooksAnalyticsList": {
+        "BooksList": {
           "type": "Component",
-          "id": "BooksAnalyticsList",
+          "id": "BooksList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/BooksAnalytics",
+              "contextPath": "/Books",
               "variantManagement": "Page",
               "navigation": {
-                "BooksAnalytics": {
+                "Books": {
                   "detail": {
-                    "route": "BooksAnalyticsObjectPage"
+                    "route": "BooksObjectPage"
                   }
                 }
               },
@@ -115,7 +115,7 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "AnalyticalTable",
-                    "selectionMode": "Auto"
+                    "selectionMode": "None"
                   }
                 }
               },
@@ -139,14 +139,14 @@
             }
           }
         },
-        "BooksAnalyticsObjectPage": {
+        "BooksObjectPage": {
           "type": "Component",
-          "id": "BooksAnalyticsObjectPage",
+          "id": "BooksObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/BooksAnalytics"
+              "contextPath": "/Books"
             }
           }
         }

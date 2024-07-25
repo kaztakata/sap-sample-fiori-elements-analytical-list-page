@@ -1,13 +1,13 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Jul 25 2024 13:05:25 GMT+0900 (Japan Standard Time)|
+|**Generation Date and Time**<br>Thu Jul 25 2024 14:45:02 GMT+0900 (Japan Standard Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.14.2|
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>Analytical List Page V4|
 |**Service Type**<br>Local Cap|
-|**Service URL**<br>http://localhost:4004/odata/v4/catalog/|
+|**Service URL**<br>http://localhost:4004/odata/v4/user/|
 |**Module Name**<br>project1|
 |**Application Title**<br>App Title|
 |**Namespace**<br>|
@@ -16,7 +16,7 @@
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
-|**Main Entity**<br>BooksAnalytics|
+|**Main Entity**<br>Books|
 
 ## project1
 

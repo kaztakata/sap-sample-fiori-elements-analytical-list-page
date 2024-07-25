@@ -1,1 +1,1 @@
-using CatalogService as service from '../../srv/admin-service';
+using UserService as service from '../../srv/user-service';
