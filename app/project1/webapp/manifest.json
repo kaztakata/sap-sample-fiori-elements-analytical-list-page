@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:alp",
       "version": "1.14.2",
-      "toolsId": "0f4f601b-80a9-4b06-a991-02dea97d6c95"
+      "toolsId": "80ce0c92-741f-469e-87d9-7d9445218df9"
     },
     "dataSources": {
       "mainService": {
@@ -50,7 +50,8 @@
         "sap.m": {},
         "sap.ui.core": {},
         "sap.ushell": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.f": {}
       }
     },
     "contentDensities": {
@@ -82,17 +83,28 @@
       "css": []
     },
     "routing": {
-      "config": {},
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
       "routes": [
         {
           "pattern": ":?query:",
           "name": "BooksList",
-          "target": "BooksList"
+          "target": [
+            "BooksList"
+          ]
         },
         {
           "pattern": "Books({key}):?query:",
           "name": "BooksObjectPage",
-          "target": "BooksObjectPage"
+          "target": [
+            "BooksList",
+            "BooksObjectPage"
+          ]
         }
       ],
       "targets": {
@@ -138,7 +150,9 @@
               },
               "initialLoad": "Enabled"
             }
-          }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
         },
         "BooksObjectPage": {
           "type": "Component",
@@ -149,9 +163,17 @@
               "editableHeaderContent": false,
               "contextPath": "/Books"
             }
-          }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/Books({key})"
         }
       }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
     }
   },
   "sap.fiori": {
